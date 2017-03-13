@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:layout_marginTop="16dp"
+                android:onClick="createClick"
+                android:text="Create" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="deferClick"
+                android:text="Defer" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="justClick"
+                android:text="Just" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="fromClick"
+                android:text="From" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="timerClick"
+                android:text="Timer" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="intervalClick"
+                android:text="Interval" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="repeatClick"
+                android:text="Repeat" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="rangeClick"
+                android:text="Range" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="mapClick"
+                android:text="map" />
+
+            <TextView
+                style="@style/TvButtonStyle"
+                android:onClick="flatMapClick"
+                android:text="flat" />
+
+
+            <TextView
+                android:id="@+id/tv_Content"
+                style="@style/TvTextViewStyle" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

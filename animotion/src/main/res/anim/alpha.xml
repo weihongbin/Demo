@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:interpolator="@android:anim/accelerate_interpolator">
+
+    <!-- fromAlpha和toAlpha是起始透明度和结束时透明度 -->
+
+    <alpha
+
+        android:fromAlpha="1.0"
+
+        android:toAlpha="0.0"
+
+        android:startOffset="500"
+
+        android:duration="500"/>
+
+</set>
+
+
+<!--    AccelerateInterpolator 加速，开始时慢中间加速
+
+    DecelerateInterpolator 减速，开始时快然后减速
+
+    AccelerateDecelerateInterolator 先加速后减速，开始结束时慢，中间加速
+
+    AnticipateInterpolator 反向，先向相反方向改变一段再加速播放
+
+    AnticipateOvershootInterpolator 反向加超越，先向相反方向改变，再加速播放，会超出目的值然后缓慢移动至目的值
+
+    BounceInterpolator 跳跃，快到目的值时值会跳跃，如目的值100，后面的值可能依次为85，77，70，80，90，100
+
+    CycleIinterpolator 循环，动画循环一定次数，值的改变为一正弦函数：Math.sin(2* mCycles* Math.PI* input)
+
+    LinearInterpolator 线性，线性均匀改变
+
+    OvershootInterpolator超越，最后超出目的值然后缓慢改变到目的值-->
+
+
+
+   <!-- //                0.0表示完全透明
+    //                1.0表示完全不透明-->
+    <!-- 透明度控制动画效果 alpha
+            浮点型值：
+                fromAlpha 属性为动画起始时透明度
+                toAlpha   属性为动画结束时透明度
+                说明:
+                    0.0表示完全透明
+                    1.0表示完全不透明
+                以上值取0.0-1.0之间的float数据类型的数字
+
+            长整型值：
+                duration  属性为动画持续时间
+                说明:
+                    时间以毫秒为单位
+    -->
