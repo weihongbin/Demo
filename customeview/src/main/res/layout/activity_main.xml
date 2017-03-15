@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<whb.cn.com.customeview.customerview.CustomerViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<whb.cn.com.customeview.customerview.SlideView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 
-    android:id="@+id/ll"
+    android:id="@+id/rightscrollview_test"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
-
+    android:background="#aaf"
     tools:context="whb.cn.com.customeview.MainActivity">
 
-    <whb.cn.com.customeview.customerview.PieView
-        android:id="@+id/customer"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:background="#000"
-        app:titleText="qwqw"
-        app:titleTextColor="#fff"
-        app:titleTextSize="20dp"
-        />
+    <!--<whb.cn.com.customeview.customerview.PieView-->
+    <!--android:id="@+id/customer"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--app:titleText="1232222"-->
+    <!--app:titleTextColor="#FFF"-->
+    <!--app:titleTextSize="20dp"-->
+    <!--/>-->
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#000"
-        android:visibility="gone"
-        android:src="@mipmap/ic_launcher" />
-</whb.cn.com.customeview.customerview.CustomerViewGroup>
+    <!--<ImageView-->
+    <!--android:id="@+id/imageView"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:background="#000"-->
+    <!--android:visibility="gone"-->
+    <!--android:src="@mipmap/ic_launcher" />-->
+
+
+
+
+
+</whb.cn.com.customeview.customerview.SlideView>

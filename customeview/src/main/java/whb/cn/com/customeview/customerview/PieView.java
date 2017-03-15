@@ -36,8 +36,8 @@ import whb.cn.com.customeview.R;
  * 5	onDraw	实际绘制内容(绘制饼状图)
  * 6	提供接口	提供接口(提供设置数据的接口)
  */
-
-public class PieView extends Button {
+//（1）构造方法 （2）onFinishInflate （3）onSizeChanged（4）onDraw
+        public class PieView extends View implements View.OnClickListener,View.OnLongClickListener{
     private static final String TAG = "PieView";
 
     /**
@@ -62,7 +62,7 @@ public class PieView extends Button {
 
     public PieView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context,attrs,defStyleAttr);
+        init(context,attrs,android.R.attr.textViewStyle);
     }
 
     public PieView(Context context, AttributeSet attrs) {
@@ -91,9 +91,7 @@ public class PieView extends Button {
                     mTitleTextSize = a.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(
                             TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
                     break;
-
             }
-
         }
         a.recycle();
 
@@ -104,8 +102,17 @@ public class PieView extends Button {
         mPaint.setTextSize(mTitleTextSize);
         mPaint.getTextBounds(text, 0, text.length(), mBound);//
 
+
+        setOnClickListener(this);
+        setOnLongClickListener(this);
+
+
     }
 
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -159,9 +166,7 @@ public class PieView extends Button {
         canvas.drawText(text, width / 2-mBound.width()/2, height /2+mBound.height()/2, mPaint);
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
+
 
     public void setmTitleTextColor(int mTitleTextColor) {
         this.mTitleTextColor = mTitleTextColor;
@@ -169,5 +174,17 @@ public class PieView extends Button {
 
     public void setmTitleTextSize(int mTitleTextSize) {
         this.mTitleTextSize = mTitleTextSize;
+    }
+
+    @Override
+    public void onClick(View view) {
+        view.setBackgroundColor(Color.YELLOW);
+    }
+
+    @Override
+    public boolean onLongClick(View view) {
+        Log.e("whbb","viewonLongClick");
+
+        return true;
     }
 }

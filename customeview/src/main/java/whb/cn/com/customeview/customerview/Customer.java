@@ -104,14 +104,14 @@ public class Customer extends TextView implements View.OnTouchListener,View.OnLo
 
     @Override
     public void onClick(View view) {
-        ( (TextView)view).setText("onClick");
+         setText("onClick");
         Log.e("whbb","viewonClick");
     }
 
     @Override
     public boolean onLongClick(View view) {
         Log.e("whbb","viewonLongClick");
-        ( (TextView)view).setText("onLongClick");
+           setText("onLongClick");
         return true;
     }
 

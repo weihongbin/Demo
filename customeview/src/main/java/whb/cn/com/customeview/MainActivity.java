@@ -1,6 +1,5 @@
 package whb.cn.com.customeview;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,15 +8,20 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.squareup.otto.Subscribe;
 
 import whb.cn.com.customeview.bean.BusProvider;
 import whb.cn.com.customeview.bean.MessageEvent;
 import whb.cn.com.customeview.customerview.CustomerButton;
+import whb.cn.com.customeview.customerview.SlideView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,18 +31,102 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     private int width = 300;
     private int height = 300;
+    private SlideView mRightScrollView;
+    private ListView mMenuList;
+    private ArrayAdapter<String> mAdapter;
+    private Button mShowMenuBtn;
+    private String[] data={"附近的人", "我的资料", "设置", "游戏"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BusProvider.getInstence().register(this);
+        mRightScrollView = (SlideView) findViewById(R.id.rightscrollview_test);
+        View menu = LayoutInflater.from(MainActivity.this).inflate(
+                R.layout.rightscrollview_menu, null);
+        final View primary = LayoutInflater.from(MainActivity.this).inflate(
+                R.layout.rightscrollview_primary, null);
+        mMenuList = (ListView) menu.findViewById(R.id.list_right_menu);
+        mShowMenuBtn = (Button) primary.findViewById(R.id.btn_showmenu);
+//        imageView = (ImageView) findViewById(R.id.imageView);
+//        imageView.setImageBitmap(getBitmap());
+        mAdapter=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, data);
+        mMenuList.setAdapter(mAdapter);
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setImageBitmap(getBitmap());
+        mShowMenuBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+               if(mRightScrollView.isShow()){
+                   mRightScrollView.hide();
+               }else{
+                   mRightScrollView.show();
+               }
+            }
+        });
+        mRightScrollView.setOnMenuChangedLister(new SlideView.OnMenuChangerLister() {
+            @Override
+            public void onChanged(boolean isShow) {
+                if (isShow) {
+                    mShowMenuBtn.setText("隐藏菜单");
+                } else {
+                    mShowMenuBtn.setText("显示菜单");
+                }
+            }
+        });
+
+        mRightScrollView.setmMenu(menu);
+        mRightScrollView.setmMainView(primary);
+        mMenuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        primary.setBackgroundColor(Color.CYAN);
+                        break;
+                    case 1:
+                        primary.setBackgroundColor(Color.BLUE);
+                        break;
+                    case 2:
+                        primary.setBackgroundColor(Color.GRAY);
+                        break;
+                    case 3:
+                        primary.setBackgroundColor(Color.MAGENTA);
+                        break;
+
+                }
+            }
+        });
 
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private Bitmap getBitmap() {
         Bitmap bm = Bitmap.createBitmap(400, 400, Bitmap.Config.ARGB_8888);
