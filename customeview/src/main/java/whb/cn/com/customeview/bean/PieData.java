@@ -16,10 +16,13 @@ public class PieData {
     private static final String TAG = "PieData";
     private String name;
     private float value;
-    private float p;//百分比
-
     private int color;//颜色
-    private float angle;//角度
+
+    public PieData(String name, float value, int color) {
+        this.name = name;
+        this.value = value;
+        this.color = color;
+    }
 
     public String getName() {
         return name;
@@ -27,22 +30,6 @@ public class PieData {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    public void setValue(float value) {
-        this.value = value;
-    }
-
-    public float getP() {
-        return p;
-    }
-
-    public void setP(float p) {
-        this.p = p;
     }
 
     public int getColor() {
@@ -53,16 +40,11 @@ public class PieData {
         this.color = color;
     }
 
-    public float getAngle() {
-        return angle;
+    public float getValue() {
+        return value;
     }
 
-    public void setAngle(float angle) {
-        this.angle = angle;
-    }
-
-    public PieData(String name, float value) {
-        this.name = name;
+    public void setValue(float value) {
         this.value = value;
     }
 
@@ -71,9 +53,7 @@ public class PieData {
         return "PieData{" +
                 "name='" + name + '\'' +
                 ", value=" + value +
-                ", p=" + p +
                 ", color=" + color +
-                ", angle=" + angle +
                 '}';
     }
 }

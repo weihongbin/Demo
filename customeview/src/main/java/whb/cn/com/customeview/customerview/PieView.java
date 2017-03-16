@@ -184,7 +184,6 @@ import whb.cn.com.customeview.R;
     @Override
     public boolean onLongClick(View view) {
         Log.e("whbb","viewonLongClick");
-
         return true;
     }
 }

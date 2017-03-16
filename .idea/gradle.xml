@@ -8,18 +8,22 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/12" />
             <option value="$PROJECT_DIR$/animotion" />
             <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/circle" />
             <option value="$PROJECT_DIR$/customeview" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/12" />
             <option value="$PROJECT_DIR$/animotion" />
             <option value="$PROJECT_DIR$/annotation" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/circle" />
             <option value="$PROJECT_DIR$/customeview" />
           </set>
         </option>

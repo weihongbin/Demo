@@ -1,1 +1,1 @@
-include ':app', ':animotion', ':customeview', ':annotation'
+include ':app', ':animotion', ':customeview', ':annotation', ':circle', ':12'
