@@ -37,11 +37,12 @@ public class CricleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cricle);
         List<PieData> data=new ArrayList<>();
-        for(int i=0;i<6;i++){
+        for(int i=0;i<10;i++){
             data.add(new PieData(i+"",10+20*i,mColors[i%9]));
         }
         cicleView= (PieViewChart) findViewById(R.id.pieViewChart);
         cicleView.setData(data);
+        cicleView.setStartAngle(0);
         cicleView.setOnItemPieClickListener(new PieViewChart.OnItemPieClickListener() {
             @Override
             public void onClick(int position) {

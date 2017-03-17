@@ -1,4 +1,4 @@
-package com.chs.easychartwidget.entity;
+package whb.cn.com.customeview.bean;
 
 /**
  * 作者：chs on 2016/9/6 15:14

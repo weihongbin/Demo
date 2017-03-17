@@ -1,4 +1,4 @@
-package com.chs.easychartwidget.utils;
+package whb.cn.com.customeview.utils;
 
 import android.content.Context;
 

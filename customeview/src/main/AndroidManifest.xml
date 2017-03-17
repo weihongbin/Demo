@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".CricleActivity"
+            android:name=".ZhuActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,7 +33,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".CricleActivity"></activity>
+        <activity android:name=".BarChartActivity"/>
+        <activity android:name=".LineChartActivity"></activity>
     </application>
 
 </manifest>
